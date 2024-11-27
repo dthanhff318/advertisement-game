@@ -1,0 +1,1 @@
+- defined your Component in this folder
