@@ -6,7 +6,7 @@ export default function Game() {
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         GAME
         <button>
-          <Link href="/about">CLick to Go to ABOUT page</Link>
+          <Link href="/about">CLick to Go to ABOUT page</Link>          
         </button>
       </main>
     </div>
