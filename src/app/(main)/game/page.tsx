@@ -1,13 +1,16 @@
-import { GameCarousel } from './components/game-carousel';
-import GameCart from './components/game-cart';
-import PageGame from './components/page-game';
+import GameIframe from "@/app/(main)/game/components/game-iframe";
+import GameCard from "./components/game-card";
+import GameInstruction from "@/app/(main)/game/components/game-instruction";
 
 export default function Game() {
   return (
-    <div className="w-full h-[100vh]">
-      <PageGame></PageGame>
-      <div className="mt-[50px] flex justify-center w-full">
-        <GameCart></GameCart>
+    <div className="w-full">
+      <GameIframe />
+      <GameInstruction />
+      <div className="flex w-full gap-2 flex-wrap mt-4 justify-center">
+        {Array.from({ length: 25 }, (_, i) => (
+          <GameCard key={i} />
+        ))}
       </div>
     </div>
   );

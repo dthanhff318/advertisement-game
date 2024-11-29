@@ -1,30 +1,30 @@
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar';
-import { AppSidebar } from './components/app-sidebar';
+import { SidebarProvider } from "@/components/ui/sidebar";
+import { AppSidebar } from "./components/app-sidebar";
+import { Search } from "lucide-react";
 
-export default function MainLayout({ children }: { children: React.ReactNode }) {
+export default function MainLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <div>
-      <header className="h-[74px] flex flex-row items-center justify-between content-center ">
-        <div className="basis-1/5 w-14">
-          <img
-            className=""
-            src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fhoanghamobile.com%2Ftin-tuc%2Fanh-con-gai%2F&psig=AOvVaw14qGCxuAZszf2E5yrPiie5&ust=1732806408491000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCMjhv4Xl_IkDFQAAAAAdAAAAABAE"
-            alt="Example"
+      <header className="h-fit w-full bg-[#09090b] flex items-center justify-end px-4 py-2 gap-6">
+        <h1 className="font-bold text-2xl bg-gradient-to-r from-blue-600 via-red-600 to-green-400 inline-block text-transparent bg-clip-text">
+          Game Stack
+        </h1>
+        <div className="flex items-center gap-2 bg-white px-2 rounded-md">
+          <input
+            type="text"
+            placeholder="Search a game..."
+            className="py-1 outline-none "
           />
+          <Search className="size-4 text-blue-300" />
         </div>
-        <div className="flex items-center justify-items-center">
-          <Input className="w-[400px]" />
-        </div>
-        <div className="basis-1/5"></div>
       </header>
       <SidebarProvider>
         <AppSidebar />
-        <main className="w-full">
-          <SidebarTrigger />
-          {children}
-        </main>
+        <main className="w-full p-4 bg-gray-600 h-fit">{children}</main>
       </SidebarProvider>
       <footer>Shared Footer</footer>
     </div>
