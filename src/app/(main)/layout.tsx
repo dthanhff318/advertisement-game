@@ -26,7 +26,7 @@ export default function MainLayout({
         <AppSidebar />
         <main className="w-full p-4 bg-gray-600 h-fit">{children}</main>
       </SidebarProvider>
-      <footer>Shared Footer</footer>
+      <footer className="">Shared Footer</footer>
     </div>
   );
 }
