@@ -6,11 +6,18 @@ export default function Game() {
   return (
     <div className="w-full">
       <GameIframe />
-      <GameInstruction />
-      <div className="flex w-full gap-2 flex-wrap mt-4 justify-center">
-        {Array.from({ length: 25 }, (_, i) => (
-          <GameCard key={i} />
-        ))}
+      <div className="flex items-center justify-center">
+        <GameInstruction />
+      </div>
+      <div className="w-ful flex items-center justify-center">
+        <div className="mt-20 w-[80%] float-col items-center justify-center">
+          <h1 className="text-2xl text-white">New Game</h1>
+          <div className="flex w-full justify-between flex-wrap mt-4 h-[500px] overflow-y-scroll">
+            {Array.from({ length: 25 }, (_, i) => (
+              <GameCard key={i} />
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
