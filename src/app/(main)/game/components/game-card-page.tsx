@@ -1,8 +1,8 @@
 import Image from "next/image";
 
-export default function GameCard() {
+export default function GameCardPage() {
   return (
-    <div className="w-[180px] h-[200px] cursor-pointer relative group overflow-hidden transition-all rounded-md">
+    <div className="w-[207px] h-[277px] cursor-pointer relative group overflow-hidden transition-all rounded-md">
       <Image
         className="h-full w-full object-cover"
         src="https://cdn.mobilecity.vn/mobilecity-vn/images/2024/05/hinh-nen-gaming-cac-trang-web.jpg.webp"

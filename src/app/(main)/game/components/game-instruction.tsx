@@ -1,7 +1,11 @@
 const GameInstruction = () => {
   return (
-    <div>
-      <h3>Game Name</h3>
+    <div className="w-[80%] h-[800px] mt-[100px] p-[24px] rounded-3xl bg-[#f8f7fa]">
+      <h1>Name Game</h1>
+      <div>
+        <h2></h2>
+        <p></p>
+      </div>
     </div>
   );
 };
