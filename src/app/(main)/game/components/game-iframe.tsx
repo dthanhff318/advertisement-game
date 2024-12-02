@@ -2,7 +2,7 @@
 "use client";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import ListGame from "@/listgame/list-game";
-import { Expand, LaptopMinimal, List, Share2 } from "lucide-react";
+import { Expand, LaptopMinimal, Share2 } from "lucide-react";
 import Image from "next/image";
 
 export default function GameIframe() {
@@ -30,7 +30,7 @@ export default function GameIframe() {
   };
 
   return (
-    <div className="w-full max-w-[920px] h-[560px]  overflow-hidden flex items-center justify-center bg-black">
+    <div className="w-full max-w-[920px] h-[560px]  md:overflow-hidden flex items-center justify-center bg-black">
       <div className="w-full h-full flex flex-col justify-end">
         <div className="flex-1 h-full flex items-center">
           <AspectRatio ratio={16 / 9} className="">
