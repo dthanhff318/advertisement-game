@@ -42,9 +42,9 @@ export default function MainLayout({
       </header>
       <SidebarProvider>
         <AppSidebar />
-        <main className="w-full p-4 bg-gray-600 h-fit">
-          <SidebarTrigger />
+        <main className="w-full p-4 bg-gray-600 h-fit relative">
           {children}
+          <SidebarTrigger className="absolute top-[-40px] left-0" />
         </main>
       </SidebarProvider>
       <footer className="">Shared Footer</footer>
