@@ -1,6 +1,10 @@
 import Image from "next/image";
-
-export default function GameCardPage() {
+export type TGame = {
+  id: number;
+  name: string;
+  linkgame: string;
+};
+export default function GameCardPage(game: TGame) {
   return (
     <div className="w-[207px] h-[277px] p-[16px] cursor-pointer rounded-xl bg-[#18181b] flex flex-col items-center justify-center border-[2px] border-black hover:border-white">
       <Image
@@ -11,7 +15,7 @@ export default function GameCardPage() {
         height={50}
       />
       <div className="mt-[16px]">
-        <p className="font-semibold text-white">Racing boy</p>
+        <p className="font-semibold text-white">{game.name}</p>
         <div className="flex items-center justify-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
