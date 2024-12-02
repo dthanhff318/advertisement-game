@@ -21,9 +21,9 @@ export default function Search() {
     }
   }, [query]);
   return (
-    <div className="w-full ">
+    <div className="w-full px-4 py-6">
       <h1 className="text-3xl text-white">Search</h1>
-      <div className="flex w-full gap-2 flex-wrap mt-4">
+      <div className="flex flex-wrap justify-center gap-7 mt-6">
         {results.length > 0 ? (
           results.map((game: TGame, index: number) => (
             <GameCardPage key={index} game={game} />
