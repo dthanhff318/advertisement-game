@@ -3,6 +3,7 @@
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import ListGame from "@/listgame/list-game";
 import { Expand, LaptopMinimal, List, Share2 } from "lucide-react";
+import Image from "next/image";
 
 export default function GameIframe() {
   const handleFullScreen = () => {
@@ -29,22 +30,27 @@ export default function GameIframe() {
   };
 
   return (
-    <div className="w-full h-fit overflow-hiddenc flex items-center justify-center">
-      <div className="w-[70%] h-full flex flex-col">
-        <AspectRatio ratio={16 / 9} className="flex-1 h-full">
-          <iframe
-            src={ListGame[2].linkgame}
-            className="w-full h-full"
-            allowFullScreen
-            id="game-play-iframe"
-          />
-        </AspectRatio>
-        <div className="h-[50px] w-full flex bg-[#f8f7fa] items-center justify-between">
+    <div className="w-full max-w-[920px] h-[560px]  overflow-hidden flex items-center justify-center bg-black">
+      <div className="w-full h-full flex flex-col justify-end">
+        <div className="flex-1 h-full flex items-center">
+          <AspectRatio ratio={16 / 9} className="">
+            <iframe
+              src={ListGame[2].linkgame}
+              className="w-full h-full"
+              allowFullScreen
+              id="game-play-iframe"
+            />
+          </AspectRatio>
+        </div>
+        <div className="min-h-[50px] w-full flex bg-[#f8f7fa] items-center justify-between">
           <div className="flex text-xl font-bold h-full">
-            <img
+            <Image
               className="h-full w-full  p-[5px]"
+              width={30}
+              height={30}
+              alt="Logo game"
               src="https://t.vietgiaitri.com/2020/1/6/loat-anh-game-tuyet-dep-tha-ho-lua-chon-de-lam-hinh-nen-dien-thoai-cuc-chat-fb3.jpg"
-            ></img>
+            />
             <p>BlockBlast</p>
           </div>
           <div className="flex mx-[20px]">

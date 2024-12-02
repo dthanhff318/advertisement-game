@@ -5,7 +5,10 @@ import GameInstruction from "@/app/(main)/game/components/game-instruction";
 export default function Game() {
   return (
     <div className="w-full">
-      <GameIframe />
+      <div className="flex items-center gap-4 max-h-[560px]">
+        <GameIframe />
+        <div className="shrink-0 bg-red-300 w-[330px] h-[560px]">Ads</div>
+      </div>
       <div className="flex items-center justify-center">
         <GameInstruction />
       </div>
