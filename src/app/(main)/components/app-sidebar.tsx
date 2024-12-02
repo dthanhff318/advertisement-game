@@ -46,7 +46,7 @@ const items = [
 
 export function AppSidebar() {
   return (
-    <Sidebar className="bg-[#18181b] w-[200px]">
+    <Sidebar className="bg-[#18181b]">
       <SidebarContent className="bg-[#18181b] w-full">
         <SidebarGroup>
           <Link href="/game" className="flex gap-4 items-center justify-center">
