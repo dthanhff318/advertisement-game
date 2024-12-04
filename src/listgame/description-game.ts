@@ -1,4 +1,4 @@
-let descriptionGame = {
+const descriptionGame = {
   des: [
     {
       title: "Overview Block Blast",

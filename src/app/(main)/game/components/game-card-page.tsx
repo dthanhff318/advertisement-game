@@ -39,10 +39,7 @@ export default function GameCardPage({ game }: { game: TGame }) {
   return (
     <div
       className="
-        w-[42%]
-        ms:w-[28%]
-        md:w-[30%]
-        lg:w-[18%]
+        w-[100%]
         p-4
         cursor-pointer
         rounded-xl
@@ -54,12 +51,12 @@ export default function GameCardPage({ game }: { game: TGame }) {
         border-2
         border-black
         hover:border-white
-        sm:max-w-[240px] /* Điều chỉnh kích thước trên màn hình nhỏ */
-        lg:max-w-[280px] /* Điều chỉnh kích thước trên tablet */
+        relative
+        aspect-square
       "
     >
       <Image
-        className="object-cover w-full h-[100px] rounded-xl sm:h-[100px] md:h-[160px] lg:h-[220px]"
+        className="h-full w-full object-cover"
         src="https://cdn.mobilecity.vn/mobilecity-vn/images/2024/05/hinh-nen-gaming-cac-trang-web.jpg.webp"
         alt="Game thumbnail"
         width={300}

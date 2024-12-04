@@ -11,16 +11,18 @@ export default function Game() {
           Ads
         </div>
       </div>
-      <div className="">
-        <GameInstruction />
-      </div>
-      <div className="w-ful flex items-center justify-center">
-        <div className="mt-20 w-[80%] float-col items-center justify-center">
-          <h1 className="text-2xl text-white">New Game</h1>
-          <div className="flex w-full justify-between flex-wrap mt-4 h-[500px] overflow-y-scroll">
-            {Array.from({ length: 25 }, (_, i) => (
-              <GameCard key={i} />
-            ))}
+      <div className="w-full flex flex-col md:flex-row mt-[50px] gap-4">
+        <div className="basis-3/3">
+          <GameInstruction />
+        </div>
+        <div className="basis-1/3 bg-white rounded-3xl ">
+          <div className="float-col p-[10px]">
+            <h1 className="text-2xl">New Game</h1>
+            <div className="grid grid-cols-3 gap-[10px]">
+              {Array.from({ length: 25 }, (_, i) => (
+                <GameCard key={i} />
+              ))}
+            </div>
           </div>
         </div>
       </div>
