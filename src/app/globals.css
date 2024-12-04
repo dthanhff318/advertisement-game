@@ -10,6 +10,10 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+  /* thêm khi tạo carousel */
+  .border-border {
+    border-color: hsl(var(--border));
+  }
 }
 
 @layer base {

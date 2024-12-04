@@ -11,7 +11,7 @@ export default function Game() {
           Ads
         </div>
       </div>
-      <div className="flex items-center justify-center">
+      <div className="">
         <GameInstruction />
       </div>
       <div className="w-ful flex items-center justify-center">

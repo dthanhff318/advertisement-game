@@ -25,19 +25,25 @@ const items = [
     uri: "/game",
   },
   {
-    title: "Adventure",
+    title: " New Games",
     url: "#",
     icon: Adventure,
     uri: "/game",
   },
   {
-    title: "Sport",
+    title: "Casual Games",
     url: "#",
     icon: RacingIcon,
     uri: "/game",
   },
   {
-    title: "Cooking",
+    title: "Puzzle Games",
+    url: "#",
+    icon: Cook,
+    uri: "/hotgame",
+  },
+  {
+    title: "Tetris Games",
     url: "#",
     icon: Cook,
     uri: "/hotgame",

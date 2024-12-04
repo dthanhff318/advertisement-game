@@ -46,8 +46,7 @@ export default function GameCardPage({ game }: { game: TGame }) {
         w-[42%]
         ms:w-[28%]
         md:w-[30%]
-        lg:w-[16%]
-        max-w-[300px]
+        lg:w-[18%]
         p-4
         cursor-pointer
         rounded-xl
