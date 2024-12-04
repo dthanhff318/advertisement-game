@@ -57,7 +57,7 @@ export function AppSidebar() {
         <SidebarGroup>
           <Link href="/game" className="flex gap-4 items-center justify-center">
             <Image
-              src="/images/logo-puzzle.png"
+              src="/images/block-blast.jpeg"
               alt="Game Block"
               width={100}
               height={30}
