@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Kanit } from "next/font/google";
 import "./globals.css";
+import { Suspense } from "react";
 
 const kanitFont = Kanit({
   weight: ["400", "500", "600", "700"],
@@ -21,7 +22,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <link rel="icon" href="/images/logo-puzzle.png" />
-      <body className={`${kanitFont.className} antialiased`}>{children}</body>
+      <body className={`${kanitFont.className} antialiased`}>
+        <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
+      </body>
     </html>
   );
 }
