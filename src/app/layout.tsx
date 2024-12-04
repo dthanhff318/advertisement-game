@@ -20,6 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <link rel="icon" href="/images/logo-puzzle.png" />
       <body className={`${kanitFont.className} antialiased`}>{children}</body>
     </html>
   );
