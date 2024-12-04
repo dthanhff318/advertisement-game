@@ -41,7 +41,7 @@ const config = [
 
 const Footer = () => {
   return (
-    <footer className="h-[200px] w-full bg-[#09090b] flex flex-row text-white px-2 pt-4 relative !z-10 border-solid border-t-[1px] border-t-[#d3d1d1]">
+    <footer className="h-fit sm:h-[200px] w-full bg-[#09090b] flex flex-col sm:flex-row text-white px-2 pt-4 relative pb-4 sm:pb-0 !z-10 border-solid border-t-[1px] border-t-[#d3d1d1]">
       <div className="basis-2/5 flex items-start gap-4 justify-center">
         <Image
           src="/images/logo-puzzle.png"
@@ -60,12 +60,14 @@ const Footer = () => {
       </div>
       {config.map((e) => (
         <div
-          className="basis-1/5 flex justify-center items-start"
+          className="basis-1/5 flex justify-center items-center sm:items-start mt-3 sm:mt-0"
           key={e.title}
         >
-          <section className="flex flex-col gap-4">
-            <h4 className="text-xl font-semibold">{e.title}</h4>
-            <div className="text-[#d3d1d1] space-y-2 flex flex-col">
+          <section className="flex flex-col gap-2 sm:gap-4">
+            <h4 className="text-xl font-semibold text-center sm:text-left">
+              {e.title}
+            </h4>
+            <div className="text-[#d3d1d1] gap-2 sm:gap-0 sm:space-y-2 flex flex-row sm:flex-col items-center sm:items-start">
               {e.info.map((e, i) => (
                 <span className="cursor-pointer" key={i}>
                   {e.name}
