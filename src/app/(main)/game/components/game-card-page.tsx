@@ -4,10 +4,6 @@ export type TGame = {
   name: string;
   linkgame: string;
 };
-type GameComponentProps = {
-  game: TGame;
-  key: number;
-};
 
 // export default function GameCardPage(game: GameComponentProps) {
 //   return (

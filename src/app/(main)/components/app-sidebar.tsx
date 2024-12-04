@@ -52,12 +52,12 @@ const items = [
 
 export function AppSidebar() {
   return (
-    <Sidebar className="bg-[#18181b]">
+    <Sidebar className="bg-[#18181b] mt-[70px]">
       <SidebarContent className="bg-[#18181b] w-full">
         <SidebarGroup>
           <Link href="/game" className="flex gap-4 items-center justify-center">
             <Image
-              src="/images/logo.png"
+              src="/images/logo-puzzle.png"
               alt="Game Block"
               width={100}
               height={30}

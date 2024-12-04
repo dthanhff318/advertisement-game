@@ -1,5 +1,3 @@
-import GameCardPage from "../game/components/game-card-page";
-
 export default function HotGame() {
   return (
     <div className="w-full ">

@@ -1,6 +1,6 @@
 import { TGame } from "@/app/(main)/game/components/game-card-page";
 
-let ListGame: TGame[] = [
+const ListGame: TGame[] = [
   {
     id: 1,
     name: "Block blast",

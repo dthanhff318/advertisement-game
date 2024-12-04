@@ -1,17 +1,15 @@
 "use client";
 
-import { usePathname, useRouter } from "next/navigation";
 import GameCardPage, { TGame } from "../game/components/game-card-page";
 import { useEffect, useState } from "react";
 import ListGame from "@/listgame/list-game";
 import { useSearchParams } from "next/navigation";
 
 export default function Search() {
-  const pathName = usePathname();
   const searchParams = useSearchParams();
   const query = searchParams.get("query");
   console.log(query);
-  const [results, setResults] = useState<any>([]);
+  const [results, setResults] = useState<TGame[]>([]);
   useEffect(() => {
     if (query) {
       const filteredAnimals = ListGame.filter((game) =>
