@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import ListGame from "@/listgame/list-game";
 import { Expand, LaptopMinimal, Share2 } from "lucide-react";
 import Image from "next/image";
+import { useEffect } from "react";
 
 export default function GameIframe() {
   const handleFullScreen = () => {
@@ -29,13 +29,27 @@ export default function GameIframe() {
     }
   };
 
+  useEffect(() => {
+    fetch("/embed/block-blast.embed")
+      .then((response) => response.text())
+      .then((data) => {
+        const iframe = document.getElementById("game-play-iframe") as any;
+        iframe.srcdoc = "/embed/block-blast.embed";
+        const iframeDoc =
+          iframe.contentDocument || iframe.contentWindow.document;
+        iframeDoc.open();
+        iframeDoc.write(data);
+        iframeDoc.close();
+      })
+      .catch((error) => console.error("Error loading file:", error));
+  }, []);
+
   return (
     <div className="w-full max-w-[920px] h-[560px]  md:overflow-hidden flex items-center justify-center bg-black">
       <div className="w-full h-full flex flex-col justify-end">
         <div className="flex-1 h-full flex items-center">
           <AspectRatio ratio={16 / 9} className="">
             <iframe
-              src={ListGame[2].linkgame}
               className="w-full h-full"
               allowFullScreen
               id="game-play-iframe"

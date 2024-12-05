@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <link rel="icon" href="/images/logo-puzzle.png" />
+      <link rel="icon" href="/images/block-blast.jpeg" />
       <body className={`${kanitFont.className} antialiased`}>
         <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
       </body>

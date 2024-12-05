@@ -1,5 +1,13 @@
-import { TGame } from "@/app/(main)/game/components/game-card-page";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import descriptionGame from "@/listgame/description-game";
 
+export type TGame = {
+  id: number;
+  name: string;
+  linkgame: string;
+  embedFile?: string;
+  instructions?: any;
+};
 const ListGame: TGame[] = [
   {
     id: 1,
@@ -11,6 +19,8 @@ const ListGame: TGame[] = [
     name: "Block1",
     linkgame:
       "https://games.crazygames.com/en_US/block-puzzle-master/index.html?v=1.299",
+    embedFile: "/embed/block-blast.embed",
+    instructions: descriptionGame,
   },
   {
     id: 3,

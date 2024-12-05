@@ -17,8 +17,8 @@ export default function Game() {
         </div>
         <div className="basis-1/3 bg-white rounded-3xl ">
           <div className="float-col p-[10px]">
-            <h1 className="text-2xl">New Game</h1>
-            <div className="grid grid-cols-3 gap-[10px]">
+            <h1 className="text-2xl">Hot Game</h1>
+            <div className="grid sm:grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3 gap-[10px]">
               {Array.from({ length: 25 }, (_, i) => (
                 <GameCard key={i} />
               ))}
