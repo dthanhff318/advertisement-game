@@ -1,8 +1,8 @@
 "use client";
 
-import GameCardPage, { TGame } from "../game/components/game-card-page";
+import GameCardPage from "../game/components/game-card-page";
 import { useEffect, useState } from "react";
-import ListGame from "@/listgame/list-game";
+import ListGame, { TGame } from "@/listgame/list-game";
 import { useSearchParams } from "next/navigation";
 
 export default function Search() {
