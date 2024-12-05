@@ -8,6 +8,7 @@ export type TGame = {
   embedFile?: string;
   instructions?: any;
 };
+
 const ListGame: TGame[] = [
   {
     id: 1,
