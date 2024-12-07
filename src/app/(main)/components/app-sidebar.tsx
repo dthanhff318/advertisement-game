@@ -9,8 +9,8 @@ import {
 import Image from "next/image";
 import {
   Adventure,
-  Cook,
   Home,
+  Puzzle,
   RacingIcon,
 } from "@/app/(main)/components/icons/icon-sidebar";
 import Link from "next/link";
@@ -39,13 +39,13 @@ const items = [
   {
     title: "Puzzle Games",
     url: "#",
-    icon: Cook,
+    icon: Puzzle,
     uri: "/hotgame",
   },
   {
     title: "Tetris Games",
     url: "#",
-    icon: Cook,
+    icon: Puzzle,
     uri: "/hotgame",
   },
 ];
