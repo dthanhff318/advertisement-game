@@ -1,11 +1,20 @@
+import { TGame } from "@/listgame/list-game";
+import useGame from "@/store/useGame";
 import Image from "next/image";
 
-export default function GameCard() {
+export default function GameCard({ game }: { game: TGame }) {
+  const { updateCurrentGame } = useGame();
+  const handleGameClick = (game: TGame) => {
+    updateCurrentGame(game); // Cập nhật state trong zustand
+  };
   return (
-    <div className="h-[160px] cursor-pointer relative group overflow-hidden transition-all rounded-md">
+    <div
+      onClick={() => handleGameClick(game)}
+      className="h-[160px] cursor-pointer relative group overflow-hidden transition-all rounded-md"
+    >
       <Image
         className="h-full w-full object-cover"
-        src="https://cdn.mobilecity.vn/mobilecity-vn/images/2024/05/hinh-nen-gaming-cac-trang-web.jpg.webp"
+        src={game.img ?? ""}
         alt="Game thumbnail"
         width={100}
         height={50}

@@ -696,7 +696,7 @@
  frame_game.setAttribute('scrolling', 'auto');
  frame_game.setAttribute('class', 'iframe-default');
  frame_game.setAttribute('allowfullscreen', 'true');
- frame_game.setAttribute('src', "https://block-blast.io/game/block-blast/");
+ frame_game.setAttribute('src', "https://reunbozdo.github.io/");
  frame_game.setAttribute('title', "Block Blast");
  if (document.getElementById("preloading-game")) {
  await document.getElementById("preloading-game").remove();

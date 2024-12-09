@@ -1,7 +1,13 @@
 import { TGame } from "@/listgame/list-game";
+import useGame from "@/store/useGame";
 import Image from "next/image";
 
 export default function GameCardPage({ game }: { game: TGame }) {
+  const { updateCurrentGame } = useGame();
+  const handleGameClick = (game: TGame) => {
+    updateCurrentGame(game);
+    // Cập nhật state trong zustand
+  };
   return (
     <div
       className="
@@ -20,10 +26,11 @@ export default function GameCardPage({ game }: { game: TGame }) {
         relative
         aspect-square
       "
+      onClick={() => handleGameClick(game)}
     >
       <Image
         className="h-full w-full object-cover"
-        src="https://cdn.mobilecity.vn/mobilecity-vn/images/2024/05/hinh-nen-gaming-cac-trang-web.jpg.webp"
+        src={game.img ?? ""}
         alt="Game thumbnail"
         width={300}
         height={180}
