@@ -10,6 +10,7 @@ export type TGame = {
   descripTion?: TDescription[];
   img?: string;
   slug: string;
+  listTag?: any;
 };
 
 export type TDescription = {
@@ -30,6 +31,7 @@ const ListGame: TGame[] = [
     descripTion: descriptionGame.BlockBlast,
     img: "/img-game/block-blast.jpeg",
     slug: "block-blast",
+    listTag: ["block games", "puzzle games"],
   },
   {
     id: 2,
@@ -41,6 +43,7 @@ const ListGame: TGame[] = [
     descripTion: descriptionGame.BlockPuzzleMaster,
     img: "/img-game/block-puzzle-master.jpeg",
     slug: "block-puzzle-master",
+    listTag: ["block games", "puzzle games", "tetris games"],
   },
   {
     id: 3,
@@ -50,6 +53,7 @@ const ListGame: TGame[] = [
     descripTion: descriptionGame.BlockbusterPuzzle,
     img: "/img-game/blockBuster-puzzle.jpeg",
     slug: "blockbuster-puzzle",
+    listTag: ["block games", "puzzle games", "tetris games", "hot game"],
   },
   {
     id: 4,
@@ -58,6 +62,7 @@ const ListGame: TGame[] = [
     descripTion: descriptionGame.Sandtrix,
     img: "/img-game/sand-trix.jpeg",
     slug: "sand-trix",
+    listTag: ["block games", "puzzle games", "tetris games"],
   },
   {
     id: 5,
@@ -67,6 +72,7 @@ const ListGame: TGame[] = [
     descripTion: descriptionGame.WoodBlockJourney,
     img: "/img-game/wood-block-journey.png",
     slug: "wood-block-journey",
+    listTag: ["block games", "puzzle games", "hot game"],
   },
   {
     id: 6,
@@ -76,6 +82,7 @@ const ListGame: TGame[] = [
     descripTion: descriptionGame.BlockChamp,
     img: "/img-game/block-champ.png",
     slug: "block-champ",
+    listTag: ["block games", "puzzle games", "new game"],
   },
   {
     id: 7,
@@ -85,6 +92,7 @@ const ListGame: TGame[] = [
     descripTion: descriptionGame.BlockBlast,
     img: "/img-game/block-match-8x8.jpeg",
     slug: "block-match-8x8",
+    listTag: ["block games", "puzzle games", "new game", "hot game"],
   },
   {
     id: 8,
@@ -94,6 +102,7 @@ const ListGame: TGame[] = [
     descripTion: descriptionGame.BlockBlast,
     img: "/img-game/wood-block-tap-away.png",
     slug: "wood-block-tap-away",
+    listTag: ["block games", "puzzle games"],
   },
   {
     id: 9,
@@ -102,6 +111,7 @@ const ListGame: TGame[] = [
     descripTion: descriptionGame.BlockBlast,
     img: "/img-game/Elemental-blockade.png",
     slug: "elemental-blockade",
+    listTag: ["block games", "puzzle games"],
   },
   {
     id: 10,
@@ -111,6 +121,7 @@ const ListGame: TGame[] = [
       "https://html5.gamedistribution.com/330c466258f941d39efc335aef7a2869/?gd_sdk_referrer_url=https://block-blast.io/choco-blocks",
     img: "/img-game/choco-blocks.png",
     slug: "choco-blocks",
+    listTag: ["block games", "puzzle games"],
   },
 ];
 

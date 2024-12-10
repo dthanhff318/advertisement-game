@@ -4,7 +4,7 @@ import useGame from "@/store/useGame";
 const GameInstruction = () => {
   const { currentGame } = useGame();
   return (
-    <div className="max-w-[920px] h-fit p-[24px] rounded-2xl bg-[#f8f7fa]">
+    <div className="h-fit p-[24px] rounded-2xl bg-[#f8f7fa]">
       {currentGame.descripTion?.map((descr: TDescription, index: number) => (
         <div key={index} className="mb-[24px]">
           <h2 className="text-2xl font-bold mb-[16px]">{descr.title}</h2>

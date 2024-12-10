@@ -2,7 +2,7 @@
 import ListGame, { TGame } from "@/listgame/list-game";
 import GameCardPage from "../game/components/game-card-page";
 
-export default function HotGame() {
+export default function CasualGame() {
   return (
     <div className="w-full ">
       <h1 className="text-3xl text-white">Game Hot</h1>

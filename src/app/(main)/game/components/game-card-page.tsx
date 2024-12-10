@@ -1,11 +1,14 @@
 import { TGame } from "@/listgame/list-game";
 import useGame from "@/store/useGame";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function GameCardPage({ game }: { game: TGame }) {
   const { updateCurrentGame } = useGame();
+  const router = useRouter();
   const handleGameClick = (game: TGame) => {
     updateCurrentGame(game);
+    router.push(`/game/${game.slug}`);
     // Cập nhật state trong zustand
   };
   return (

@@ -10,6 +10,7 @@ import Image from "next/image";
 import {
   Adventure,
   Home,
+  HotGame,
   Puzzle,
   RacingIcon,
 } from "@/app/(main)/components/icons/icon-sidebar";
@@ -28,25 +29,31 @@ const items = [
     title: " New Games",
     url: "#",
     icon: Adventure,
-    uri: "/game",
+    uri: "/newgame",
   },
   {
-    title: "Casual Games",
+    title: "Hot Game",
     url: "#",
-    icon: RacingIcon,
-    uri: "/game",
+    icon: HotGame,
+    uri: "/hotgame",
   },
   {
     title: "Puzzle Games",
     url: "#",
     icon: Puzzle,
-    uri: "/hotgame",
+    uri: "/pouzzlegames",
+  },
+  {
+    title: "Casual Games",
+    url: "#",
+    icon: Puzzle,
+    uri: "/casualgames",
   },
   {
     title: "Tetris Games",
     url: "#",
     icon: Puzzle,
-    uri: "/hotgame",
+    uri: "/tetrisgames",
   },
 ];
 
