@@ -8,14 +8,13 @@ import { useSearchParams } from "next/navigation";
 export default function Search() {
   const searchParams = useSearchParams();
   const query = searchParams.get("query");
-  console.log(query);
   const [results, setResults] = useState<TGame[]>([]);
   useEffect(() => {
     if (query) {
       const filteredAnimals = ListGame.filter((game) =>
         game.name.toLowerCase().includes((query as string).toLowerCase())
       );
-      setResults(filteredAnimals); // Cập nhật mảng kết quả
+      setResults(filteredAnimals);
     }
   }, [query]);
   return (

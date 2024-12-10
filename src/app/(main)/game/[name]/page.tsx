@@ -1,9 +1,11 @@
-"use client";
 import GameIframe from "@/app/(main)/game/components/game-iframe";
-export default function Game() {
+
+const GameDetail = () => {
   return (
     <>
       <GameIframe />
     </>
   );
-}
+};
+
+export default GameDetail;

@@ -1,13 +1,14 @@
+import { TDescription, TDescSub } from "@/listgame/list-game";
 import useGame from "@/store/useGame";
 
 const GameInstruction = () => {
   const { currentGame } = useGame();
   return (
     <div className="max-w-[920px] h-fit p-[24px] rounded-2xl bg-[#f8f7fa]">
-      {currentGame.descripTion.map((descr: any, index: number) => (
+      {currentGame.descripTion?.map((descr: TDescription, index: number) => (
         <div key={index} className="mb-[24px]">
           <h2 className="text-2xl font-bold mb-[16px]">{descr.title}</h2>
-          {descr.descSub.map((sub: any, subIndex: number) => (
+          {descr.descSub?.map((sub: TDescSub, subIndex: number) => (
             <div key={subIndex} className="mb-[16px]">
               {sub.title2 && (
                 <h3 className="text-xl font-semibold mb-[8px]">{sub.title2}</h3>

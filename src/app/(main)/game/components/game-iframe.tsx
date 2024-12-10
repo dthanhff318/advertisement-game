@@ -2,11 +2,16 @@
 "use client";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import useClickOutside from "@/hooks/use-click-outside";
+import ListGame from "@/listgame/list-game";
+import useGame from "@/store/useGame";
 import { Expand, LaptopMinimal, Share2 } from "lucide-react";
 import Image from "next/image";
+import { useParams } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
 export default function GameIframe() {
+  const searchParams = useParams();
+  const { currentGame, updateCurrentGame } = useGame();
   const [cinemaMode, setCinemaMode] = useState(false);
   const handleFullScreen = () => {
     const iframeGame = document.querySelector("#game-play-iframe") as any;
@@ -34,19 +39,28 @@ export default function GameIframe() {
   const iframeWrapRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    fetch("/embed/block-blast.embed")
-      .then((response) => response.text())
-      .then((data) => {
-        const iframe = document.getElementById("game-play-iframe") as any;
-        iframe.srcdoc = "/embed/block-blast.embed";
-        const iframeDoc =
-          iframe.contentDocument || iframe.contentWindow.document;
-        iframeDoc.open();
-        iframeDoc.write(data);
-        iframeDoc.close();
-      })
-      .catch((error) => console.error("Error loading file:", error));
-  }, []);
+    const iframe = document.getElementById("game-play-iframe") as any;
+    const game =
+      (searchParams.name
+        ? ListGame.find((e) => e.slug === searchParams.name)
+        : ListGame[0]) ?? ListGame[0];
+    updateCurrentGame(game);
+    if (game.embedFile) {
+      fetch(game.embedFile)
+        .then((response) => response.text())
+        .then((data) => {
+          iframe.srcdoc = game.embedFile;
+          const iframeDoc =
+            iframe.contentDocument || iframe.contentWindow.document;
+          iframeDoc.open();
+          iframeDoc.write(data);
+          iframeDoc.close();
+        })
+        .catch((error) => console.error("Error loading file:", error));
+    } else {
+      iframe.src = game.linkgame;
+    }
+  }, [searchParams]);
 
   // Handle click outside when Iframe in cinema mode
   useClickOutside({
@@ -85,13 +99,13 @@ export default function GameIframe() {
           <div className="min-h-[50px] w-full flex bg-[#f8f7fa] items-center justify-between">
             <div className="flex text-xl font-bold h-full">
               <Image
-                className="h-full w-full  p-[5px]"
+                className="h-[60px] w-[70px] p-[5px]"
                 width={30}
                 height={30}
                 alt="Logo game"
-                src="https://t.vietgiaitri.com/2020/1/6/loat-anh-game-tuyet-dep-tha-ho-lua-chon-de-lam-hinh-nen-dien-thoai-cuc-chat-fb3.jpg"
+                src={currentGame.img ?? ""}
               />
-              <p>BlockBlast</p>
+              <p>{currentGame.name}</p>
             </div>
             <div className="flex mx-[20px]">
               <Share2 className="mr-[16px] hover:text-blue-600 cursor-pointer" />
