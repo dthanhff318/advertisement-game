@@ -28,10 +28,10 @@ export default function GameLayout({ children }: TProps) {
         <div className="max-w-[1020px]">
           <GameInstruction />
         </div>
-        <div className="bg-white rounded-2xl md:w-[220px] lg:w-[280px] xl:w-[330px] 2xl:w-[420px]">
+        <div className="shrink-0 bg-white rounded-2xl md:w-[220px] lg:w-[280px] xl:w-[330px] 2xl:w-auto">
           <div className="float-col p-[10px]">
             <h1 className="text-2xl ml-1 font-semibold mb-2">Hot Game</h1>
-            <div className="grid grid-cols-4 sm:grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3 gap-[10px]">
+            <div className="grid grid-cols-4 sm:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-3 gap-[10px]">
               {ListGame.map((game: TGame, index: number) => (
                 <GameCard key={index} game={game} />
               ))}
