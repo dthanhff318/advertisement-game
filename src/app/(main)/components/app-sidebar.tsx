@@ -12,7 +12,6 @@ import {
   Home,
   HotGame,
   Puzzle,
-  RacingIcon,
 } from "@/app/(main)/components/icons/icon-sidebar";
 import Link from "next/link";
 
