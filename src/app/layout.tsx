@@ -22,7 +22,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta name="title" content="Block Blast" />
         <meta name="robots" content="noodp,index,follow" />
+        <meta
+          name="description"
+          content="Block Blast is the ultimate puzzle game for fun and strategy lovers! Match blocks, clear rows, and challenge your mind in this exciting, free-to-play game online."
+        />
+        <meta name="geo.region" content="US" />
+        <meta name="geo.position" content="37.7749;-122.4194" />
+        <meta name="ICBM" content="37.7749, -122.4194" />
         <link rel="icon" href="/images/block-blast.jpeg" />
       </head>
       <body className={`${kanitFont.className} antialiased`}>

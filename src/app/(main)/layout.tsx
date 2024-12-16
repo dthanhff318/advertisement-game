@@ -17,7 +17,7 @@ export default function MainLayout({
       <Header />
       <SidebarProvider>
         <AppSidebar />
-        <main className="mt-[70px] w-full p-2 sm:p-4 bg-gray-600 h-fit relative">
+        <main className="mt-[70px] w-full p-2 sm:p-4 bg-gray-600 min-h-screen relative ">
           {children}
           <SidebarTrigger className="fixed top-[14px] left-[14px] !z-[10000]" />
         </main>
