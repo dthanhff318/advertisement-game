@@ -86,7 +86,7 @@ export default function GameIframe() {
             : ""
         }`}
       >
-        <div className="w-full h-full flex flex-col justify-end pointer-events-none">
+        <div className="w-full h-full flex flex-col justify-end">
           <div className="flex-1 h-full flex items-center">
             <AspectRatio ratio={16 / 9} className="">
               <iframe
