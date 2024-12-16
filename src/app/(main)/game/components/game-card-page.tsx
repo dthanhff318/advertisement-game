@@ -39,9 +39,11 @@ export default function GameCardPage({ game }: { game: TGame }) {
         height={180}
       />
       <div className="mt-4 text-center">
-        <p className="font-semibold text-white text-base sm:text-sm lg:text-base">
-          {game.name}
-        </p>
+        <div className="h-[48px] text-center flex items-center justify-center">
+          <p className="font-semibold text-white text-base sm:text-sm lg:text-base double-line-height">
+            {game.name}
+          </p>
+        </div>
         <div className="flex items-center justify-center mt-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
