@@ -45,21 +45,21 @@ export default function GameIframe() {
         ? ListGame.find((e) => e.slug === searchParams.name)
         : ListGame[0]) ?? ListGame[0];
     updateCurrentGame(game);
-    if (game.embedFile) {
-      fetch(game.embedFile)
-        .then((response) => response.text())
-        .then((data) => {
-          iframe.srcdoc = game.embedFile;
-          const iframeDoc =
-            iframe.contentDocument || iframe.contentWindow.document;
-          iframeDoc.open();
-          iframeDoc.write(data);
-          iframeDoc.close();
-        })
-        .catch((error) => console.error("Error loading file:", error));
-    } else {
-      iframe.src = game.linkgame;
-    }
+    // if (game.embedFile) {
+    //   fetch(game.embedFile)
+    //     .then((response) => response.text())
+    //     .then((data) => {
+    //       iframe.srcdoc = game.embedFile;
+    //       const iframeDoc =
+    //         iframe.contentDocument || iframe.contentWindow.document;
+    //       iframeDoc.open();
+    //       iframeDoc.write(data);
+    //       iframeDoc.close();
+    //     })
+    //     .catch((error) => console.error("Error loading file:", error));
+    // } else {
+    iframe.src = game.linkgame;
+    // }
   }, [searchParams]);
 
   // Handle click outside when Iframe in cinema mode
@@ -80,7 +80,7 @@ export default function GameIframe() {
       )}
       <div
         ref={iframeWrapRef}
-        className={`iframe-wrap w-full max-w-[1020px] h-[610px] md:overflow-hidden flex items-center justify-center bg-black  ${
+        className={`iframe-wrap w-full max-w-[1020px] h-fit md:overflow-hidden flex items-center justify-center bg-black  ${
           cinemaMode
             ? "z-[100001] fixed top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]"
             : ""
@@ -90,7 +90,7 @@ export default function GameIframe() {
           <div className="flex-1 h-full flex items-center">
             <AspectRatio ratio={16 / 9} className="">
               <iframe
-                className="w-full h-full"
+                className="w-full h-full pointer-events-auto"
                 allowFullScreen
                 id="game-play-iframe"
               />

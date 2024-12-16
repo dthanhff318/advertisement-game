@@ -32,13 +32,13 @@ const ListGame: TGame[] = [
     img: "/img-game/block-blast.jpeg",
     slug: "block-blast",
     listTag: ["block games", "puzzle games"],
+    embedFile: "/embed/block-blast.embed",
   },
   {
     id: 2,
     name: "Block Puzzle Master",
     linkgame:
       "https://games.crazygames.com/en_US/block-puzzle-master/index.html?v=1.299",
-    embedFile: "/embed/block-blast.embed",
     instructions: descriptionGame,
     descripTion: descriptionGame.BlockPuzzleMaster,
     img: "/img-game/block-puzzle-master.jpeg",
