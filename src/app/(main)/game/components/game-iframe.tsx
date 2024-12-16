@@ -80,17 +80,17 @@ export default function GameIframe() {
       )}
       <div
         ref={iframeWrapRef}
-        className={`iframe-wrap w-full max-w-[1020px] h-[610px] md:overflow-hidden flex items-center justify-center bg-black  ${
+        className={`iframe-wrap w-full max-w-[1020px] h-fit md:overflow-hidden flex items-center justify-center bg-black  ${
           cinemaMode
             ? "z-[100001] fixed top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]"
             : ""
         }`}
       >
-        <div className="w-full h-full flex flex-col justify-end">
+        <div className="w-full h-full flex flex-col justify-end pointer-events-none">
           <div className="flex-1 h-full flex items-center">
             <AspectRatio ratio={16 / 9} className="">
               <iframe
-                className="w-full h-full"
+                className="w-full h-full pointer-events-auto"
                 allowFullScreen
                 id="game-play-iframe"
               />
