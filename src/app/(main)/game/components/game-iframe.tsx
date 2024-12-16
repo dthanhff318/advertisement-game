@@ -45,21 +45,21 @@ export default function GameIframe() {
         ? ListGame.find((e) => e.slug === searchParams.name)
         : ListGame[0]) ?? ListGame[0];
     updateCurrentGame(game);
-    if (game.embedFile) {
-      fetch(game.embedFile)
-        .then((response) => response.text())
-        .then((data) => {
-          iframe.srcdoc = game.embedFile;
-          const iframeDoc =
-            iframe.contentDocument || iframe.contentWindow.document;
-          iframeDoc.open();
-          iframeDoc.write(data);
-          iframeDoc.close();
-        })
-        .catch((error) => console.error("Error loading file:", error));
-    } else {
-      iframe.src = game.linkgame;
-    }
+    // if (game.embedFile) {
+    //   fetch(game.embedFile)
+    //     .then((response) => response.text())
+    //     .then((data) => {
+    //       iframe.srcdoc = game.embedFile;
+    //       const iframeDoc =
+    //         iframe.contentDocument || iframe.contentWindow.document;
+    //       iframeDoc.open();
+    //       iframeDoc.write(data);
+    //       iframeDoc.close();
+    //     })
+    //     .catch((error) => console.error("Error loading file:", error));
+    // } else {
+    iframe.src = game.linkgame;
+    // }
   }, [searchParams]);
 
   // Handle click outside when Iframe in cinema mode
