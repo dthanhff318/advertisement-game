@@ -1,7 +1,12 @@
-"use client";
 import ListGame, { TGame } from "@/listgame/list-game";
 import GameCardPage from "../game/components/game-card-page";
+import type { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: "Puzzle Games - Endless Brain Teasers",
+  description:
+    "Explore a collection of exciting puzzle games that challenge your intellect and creativity.",
+};
 export default function PouzzleGame() {
   return (
     <div className="w-full ">

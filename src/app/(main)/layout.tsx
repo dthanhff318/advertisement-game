@@ -1,11 +1,8 @@
-"use client";
-
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "./components/app-sidebar";
 import Footer from "@/app/(main)/components/footer";
 import Header from "@/app/(main)/components/header";
 // import FixedAd from "@/app/(main)/components/fixed-ads";
-
 export default function MainLayout({
   children,
 }: {

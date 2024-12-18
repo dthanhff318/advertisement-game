@@ -22,7 +22,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta name="title" content="Block Blast" />
         <meta name="robots" content="noodp,index,follow" />
         <meta
           name="description"

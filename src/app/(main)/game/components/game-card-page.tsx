@@ -1,3 +1,4 @@
+"use client";
 import { TGame } from "@/listgame/list-game";
 import useGame from "@/store/useGame";
 import Image from "next/image";

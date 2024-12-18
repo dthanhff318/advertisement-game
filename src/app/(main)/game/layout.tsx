@@ -13,7 +13,7 @@ export default function GameLayout({ children }: TProps) {
     <div className="w-full">
       <div className="flex flex-col md:flex-row items-center gap-4 max-h-[610px]">
         {children}
-        <div className="shrink-0 bg-red-300 w-full md:w-[220px] lg:w-[280px] xl:w-[330px] 2xl:w-[420px] h-[200px] sm:h-[300px] md:h-[610px]">
+        <div className="bg-red-300 w-full md:w-[220px] lg:w-[280px] xl:w-[330px] 2xl:w-[420px] h-[200px] sm:h-[250px] md:h-[610px] md:shrink-0">
           Ads
         </div>
         <div className="hidden 2xl:flex flex-col gap-4 justify-start h-[200px] sm:h-[300px] md:h-[610px] ">

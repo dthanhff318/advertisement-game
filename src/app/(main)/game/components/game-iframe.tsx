@@ -11,6 +11,7 @@ import { useEffect, useRef, useState } from "react";
 
 export default function GameIframe() {
   const searchParams = useParams();
+  const [rating, setRating] = useState(0);
   const { currentGame, updateCurrentGame } = useGame();
   const [cinemaMode, setCinemaMode] = useState(false);
   const handleFullScreen = () => {
@@ -105,7 +106,6 @@ export default function GameIframe() {
                 alt="Logo game"
                 src={currentGame.img ?? ""}
               />
-              <p>{currentGame.name}</p>
             </div>
             <div className="flex mx-[20px]">
               <Share2 className="mr-[16px] hover:text-blue-600 cursor-pointer" />
