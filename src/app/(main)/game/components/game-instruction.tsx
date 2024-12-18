@@ -1,3 +1,4 @@
+"use client";
 import { TDescription, TDescSub } from "@/listgame/list-game";
 import useGame from "@/store/useGame";
 
