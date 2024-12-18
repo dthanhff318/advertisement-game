@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
@@ -39,7 +38,7 @@ export function CommentGame() {
                 htmlFor="terms"
                 className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
               >
-                I'd read and agree to the terms and conditions.
+                I&apos;d read and agree to the terms and conditions.
               </label>
             </div>
           </div>

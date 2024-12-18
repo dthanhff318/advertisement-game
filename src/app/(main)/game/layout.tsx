@@ -1,4 +1,3 @@
-"use client";
 import GameCard from "./components/game-card";
 import GameInstruction from "@/app/(main)/game/components/game-instruction";
 import ListGame, { TGame } from "@/listgame/list-game";
@@ -9,6 +8,21 @@ type TProps = {
   children: ReactNode;
 };
 export default function GameLayout({ children }: TProps) {
+  // const fetchRatingAndComment = async () => {
+  //   const response = await fetch("/api/rating?game=block-blast", {
+  //     method: "GET",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     // body: JSON.stringify({
+  //     //   rate: 5,
+  //     //   email: "tizz@gmail.com",
+  //     // }),
+  //   });
+  //   // const data = await response.json();
+  //   // console.log(data);
+  // };
+
   return (
     <div className="w-full">
       <div className="flex flex-col md:flex-row items-center gap-4 max-h-[610px]">
