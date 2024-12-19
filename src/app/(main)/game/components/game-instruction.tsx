@@ -7,9 +7,9 @@ const GameInstruction = () => {
   const { currentGame } = useGame();
   return (
     <div className="h-fit max-w-[1020px] p-[24px] rounded-2xl bg-[#f8f7fa]">
-      <div className="flex justify-between">
-        <h1 className="text-3xl font-bold mb-[16px]">{currentGame.name}</h1>
-        <ReactStars count={5} size={28} color2={"#ffd700"} />
+      <div className="flex items-center justify-between mb-[24px]">
+        <h1 className="text-3xl font-bold">{currentGame.name}</h1>
+        <ReactStars count={5} size={34} color2={"#ffd700"} />
       </div>
       {currentGame.descripTion?.map((descr: TDescription, index: number) => (
         <div key={index} className="mb-[24px]">
