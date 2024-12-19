@@ -3,6 +3,7 @@ import GameInstruction from "@/app/(main)/game/components/game-instruction";
 import ListGame, { TGame } from "@/listgame/list-game";
 import { ReactNode } from "react";
 import { CommentGame } from "./components/comment";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 type TProps = {
   children: ReactNode;
@@ -44,11 +45,13 @@ export default function GameLayout({ children }: TProps) {
         <div className="shrink-0 w-full md:w-[220px] lg:w-[280px] xl:w-[330px] 2xl:w-[420px]">
           <div className="p-[10px] shrink-0 bg-white rounded-2xl">
             <h1 className="text-2xl ml-1 font-semibold mb-2">Hot Game</h1>
-            <div className="grid grid-cols-4 sm:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-3 gap-[10px]">
-              {ListGame.slice(0, 12).map((game: TGame, index: number) => (
-                <GameCard key={index} game={game} />
-              ))}
-            </div>
+            <ScrollArea className="h-[670px]">
+              <div className="grid grid-cols-4 sm:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-3 gap-[10px]">
+                {ListGame.slice(0, 12).map((game: TGame, index: number) => (
+                  <GameCard key={index} game={game} />
+                ))}
+              </div>
+            </ScrollArea>
           </div>
           <div className="mt-[20px] float-col shrink-0 bg-white rounded-2xl">
             <CommentGame></CommentGame>
