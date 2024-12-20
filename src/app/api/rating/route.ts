@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import dbConnect from "@/lib/mongodb";
 import reactionModel from "@/models/reaction";
 import { NextResponse } from "next/server";
@@ -25,9 +26,20 @@ export async function POST(request: Request) {
     await dbConnect();
     const ipAddress = request?.headers?.get("x-forwarded-for") ?? "Unknown";
     const body: RequestBody = await request.json();
-    const newReaction = new reactionModel({ ...body, ipAddress });
-    const resReaction = await newReaction.save();
-    return NextResponse.json({ message: resReaction });
+    const { game, ...rest } = body as any;
+    const findExist = await reactionModel.findOne({
+      game,
+    });
+    if (findExist) {
+      await reactionModel.findOneAndUpdate({
+        game,
+        ...rest,
+      });
+    } else {
+      const newReaction = new reactionModel({ ...body, ipAddress });
+      await newReaction.save();
+    }
+    return NextResponse.json({ message: "OK" });
   } catch (error) {
     return NextResponse.json({ error }, { status: 400 });
   }
