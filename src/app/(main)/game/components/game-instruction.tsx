@@ -4,10 +4,56 @@ import useGame from "@/store/useGame";
 import ReactStars from "react-stars";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import Breadcrumb from "@/app/(main)/components/breadcrumb";
+import { useEffect, useState } from "react";
 
 const GameInstruction = () => {
   const { currentGame } = useGame();
+  const [rate, setRate] = useState(0);
+  const handlRate = async (rateG: any) => {
+    setRate(rateG);
+    const response = await fetch(`/api/rating`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        rate: rateG,
+        name: currentGame.name,
+      }),
+    });
+    // const data = await response.json();
+    // console.log(data);
+  };
 
+  const [responseData, setResponseData] = useState(null); // Trạng thái lưu kết quả từ API
+
+  useEffect(() => {
+    // Nếu `currentGame` tồn tại, gọi API để lấy đánh giá
+    if (currentGame?.name) {
+      const fetchGameRating = async () => {
+        try {
+          const response = await fetch(`/api/rating?game=${currentGame.name}`, {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          });
+
+          if (!response.ok) {
+            throw new Error("Failed to fetch rating");
+          }
+          console.log(response);
+          const data = await response.json();
+          setResponseData(data); // Lưu kết quả vào state
+        } catch (error) {
+          console.error("Error fetching rating:", error);
+        }
+      };
+
+      fetchGameRating();
+    }
+  }, [currentGame]);
+  console.log(responseData);
   const breadcrumbItems = [
     { label: "HOME", href: "/", active: false },
     {
@@ -23,7 +69,13 @@ const GameInstruction = () => {
         <Breadcrumb items={breadcrumbItems} />
         <div className="flex items-center justify-between mb-[24px]">
           <h1 className="text-3xl font-bold">{currentGame.name}</h1>
-          <ReactStars count={5} size={34} color2={"#ffd700"} />
+          <ReactStars
+            value={5}
+            onChange={handlRate}
+            count={5}
+            size={34}
+            color2={"#ffd700"}
+          />
         </div>
         {currentGame.descripTion?.map((descr: TDescription, index: number) => (
           <div key={index} className="mb-[24px]">
