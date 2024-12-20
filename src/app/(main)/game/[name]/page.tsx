@@ -1,4 +1,5 @@
 import GameIframe from "@/app/(main)/game/components/game-iframe";
+import ListGame from "@/listgame/list-game";
 import Head from "next/head";
 
 const GameDetail = ({ params }: { params: { name: string } }) => {
@@ -78,15 +79,22 @@ export async function generateMetadata({
 }: {
   params: { name: string };
 }) {
-  const gameName = params.name;
+  const gameSlug = params.name;
+  const findGame = ListGame.find((e) => e.slug === gameSlug);
   return {
-    title: `${gameName} - Ultimate Puzzle Game`,
-    description: `${gameName} is the ultimate puzzle game for fun and strategy lovers!`,
+    title: `${findGame?.name ?? "Block Blast"} - Ultimate Puzzle Game`,
+    description: `${
+      findGame?.name ?? "Block Blast"
+    } is the ultimate puzzle game for fun and strategy lovers!`,
     openGraph: {
-      title: `${gameName} - Ultimate Puzzle Game`,
-      description: `${gameName} is the ultimate puzzle game for fun and strategy lovers!`,
-      url: `https://yourdomain.com/game/${gameName}`,
-      image: `https://yourdomain.com/images/${gameName}.jpeg`,
+      title: `${findGame?.name ?? "Block Blast"} - Ultimate Puzzle Game`,
+      description: `${
+        findGame?.name ?? "Block Blast"
+      } is the ultimate puzzle game for fun and strategy lovers!`,
+      url: `https://yourdomain.com/game/${findGame?.name ?? "Block Blast"}`,
+      image: `https://yourdomain.com/images/${
+        findGame?.name ?? "Block Blast"
+      }.jpeg`,
     },
   };
 }
