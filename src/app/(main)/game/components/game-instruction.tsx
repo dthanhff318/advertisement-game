@@ -3,12 +3,24 @@ import { TDescription, TDescSub } from "@/listgame/list-game";
 import useGame from "@/store/useGame";
 import ReactStars from "react-stars";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import Breadcrumb from "@/app/(main)/components/breadcrumb";
 
 const GameInstruction = () => {
   const { currentGame } = useGame();
+
+  const breadcrumbItems = [
+    { label: "HOME", href: "/", active: false },
+    {
+      label: currentGame.listTag[0].toUpperCase(),
+      href: `/game/${currentGame.listTag[0]}`,
+      active: false,
+    },
+    { label: currentGame.name, href: "", active: true },
+  ];
   return (
     <div className="h-fit max-w-[1020px] p-[24px] rounded-2xl bg-[#f8f7fa]">
       <ScrollArea className="h-[1510px] w-full">
+        <Breadcrumb items={breadcrumbItems} />
         <div className="flex items-center justify-between mb-[24px]">
           <h1 className="text-3xl font-bold">{currentGame.name}</h1>
           <ReactStars count={5} size={34} color2={"#ffd700"} />
