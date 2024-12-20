@@ -12,10 +12,11 @@ export async function GET(request: Request) {
   await dbConnect();
   const { searchParams } = new URL(request.url);
   const queryValue = searchParams.get("game");
-  console.log(queryValue);
-
+  const dataGame = await reactionModel.findOne({
+    game: queryValue,
+  });
   return NextResponse.json({
-    message: "Hello from App Router with TypeScript!",
+    data: dataGame,
   });
 }
 

@@ -5,6 +5,7 @@ export interface IReaction extends Document {
   email: string;
   comment: string;
   rate: number;
+  game: string;
   createdAt: Date;
 }
 
@@ -14,6 +15,7 @@ const ReactionSchema: Schema = new Schema(
     email: { type: String },
     rate: { type: Number },
     comment: { type: String },
+    game: { type: String },
   },
   { timestamps: true }
 );
