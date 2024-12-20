@@ -66,6 +66,7 @@ const GameDetail = ({ params }: { params: { name: string } }) => {
             }),
           }}
         />
+        {/* <link rel="canonical" href="https://example.com/" /> */}
       </Head>
       <GameIframe />
     </>

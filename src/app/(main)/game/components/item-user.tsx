@@ -1,7 +1,7 @@
 "use client";
 import { TGame } from "@/listgame/list-game";
 
-export default function ItemUser() {
+export default function ItemUser({ comment }: any) {
   return (
     <div className="w-full h-auto mb-[15px]">
       <div className="flex mb-[5px] h-[40px] items-center">
@@ -9,13 +9,11 @@ export default function ItemUser() {
           C
         </div>
         <div className="">
-          <span className="block leading-4">name game</span>
-          <span className="text-xs leading-3"> a year</span>
+          <span className="block leading-4">{comment.email}</span>
+          <span className="text-xs leading-3">{comment.updateAt}</span>
         </div>
       </div>
-      <p className="break-words leading-5 text-wrap">
-        Block balsas í game hot neww csada asd asd as ádđa asdasda asdsd a
-      </p>
+      <p className="break-words leading-5 text-wrap">{comment.comment}</p>
     </div>
   );
 }

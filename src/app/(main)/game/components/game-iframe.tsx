@@ -106,6 +106,7 @@ export default function GameIframe() {
                 alt="Logo game"
                 src={currentGame.img ?? ""}
               />
+              <p>{currentGame.name}</p>
             </div>
             <div className="flex mx-[20px]">
               <Share2 className="mr-[16px] hover:text-blue-600 cursor-pointer" />

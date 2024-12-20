@@ -15,9 +15,12 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Textarea } from "@/components/ui/textarea";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import ItemUser from "./item-user";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import useGame from "@/store/useGame";
 
 export function CommentGame() {
+  const { currentGame } = useGame();
+  const [responseData, setResponseData] = useState([]); // Trạng thái lưu kết quả từ API
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -48,7 +51,6 @@ export function CommentGame() {
       terms: e,
     }));
   };
-  console.log(formData);
   const handleSubmit = (e: any) => {
     e.preventDefault();
 
@@ -61,22 +63,34 @@ export function CommentGame() {
     }
   };
 
-  const fetchRatingAndComment = async () => {
-    const response = await fetch("/api/rating?game=block-blast", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      // body: JSON.stringify({
-      //   rate: 5,
-      //   email: "tizz@gmail.com",
-      // }),
-    });
-    // const data = await response.json();
-    // console.log(data);
-  };
+  useEffect(() => {
+    // Nếu `currentGame` tồn tại, gọi API để lấy đánh giá
+    if (currentGame?.name) {
+      const fetchGameRating = async () => {
+        try {
+          const response = await fetch(`/api/rating?game=${currentGame.slug}`, {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          });
+
+          if (!response.ok) {
+            throw new Error("Failed to fetch rating");
+          }
+          const data = await response.json();
+          console.log(data.data);
+          setResponseData(data.data); // Lưu kết quả vào state
+        } catch (error) {
+          console.error("Error fetching rating:", error);
+        }
+      };
+
+      fetchGameRating();
+    }
+  }, [currentGame]);
   const handlComment = async (CommentGame: any) => {
-    const response = await fetch("/api/rating?game=block-blast", {
+    const response = await fetch("/api/rating", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -84,11 +98,13 @@ export function CommentGame() {
       body: JSON.stringify({
         email: CommentGame.email,
         comment: CommentGame.comment,
+        game: currentGame.slug,
       }),
     });
     // const data = await response.json();
     // console.log(data);
   };
+  console.log(responseData);
   return (
     <div>
       <Card className="w-full">
@@ -96,9 +112,11 @@ export function CommentGame() {
           <CardTitle className="text-xl">Comment</CardTitle>
         </CardHeader>
         <ScrollArea className="h-[400px] w-full p-[24px]">
-          <ItemUser></ItemUser>
-          <ItemUser></ItemUser>
-          <ItemUser></ItemUser>
+          <ul>
+            {responseData.map((comment: any, index) => (
+              <ItemUser key={index} comment={comment}></ItemUser>
+            ))}
+          </ul>
         </ScrollArea>
         <CardContent>
           <form onSubmit={handleSubmit}>

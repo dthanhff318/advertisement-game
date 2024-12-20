@@ -13,9 +13,11 @@ export async function GET(request: Request) {
   await dbConnect();
   const { searchParams } = new URL(request.url);
   const queryValue = searchParams.get("game");
-  const dataGame = await reactionModel.findOne({
+  const dataGame = await reactionModel.find({
     game: queryValue,
   });
+  console.log(dataGame);
+
   return NextResponse.json({
     data: dataGame,
   });

@@ -8,7 +8,8 @@ import { useEffect, useState } from "react";
 
 const GameInstruction = () => {
   const { currentGame } = useGame();
-  const [rate, setRate] = useState(0);
+  const [rate, setRate] = useState(4.5);
+  const [responseData, setResponseData] = useState(null); // Trạng thái lưu kết quả từ API
   const handlRate = async (rateG: any) => {
     setRate(rateG);
     const response = await fetch(`/api/rating`, {
@@ -18,21 +19,19 @@ const GameInstruction = () => {
       },
       body: JSON.stringify({
         rate: rateG,
-        name: currentGame.name,
+        game: currentGame.slug,
       }),
     });
-    // const data = await response.json();
+
     // console.log(data);
   };
-
-  const [responseData, setResponseData] = useState(null); // Trạng thái lưu kết quả từ API
 
   useEffect(() => {
     // Nếu `currentGame` tồn tại, gọi API để lấy đánh giá
     if (currentGame?.name) {
       const fetchGameRating = async () => {
         try {
-          const response = await fetch(`/api/rating?game=${currentGame.name}`, {
+          const response = await fetch(`/api/rating?game=${currentGame.slug}`, {
             method: "GET",
             headers: {
               "Content-Type": "application/json",
@@ -42,9 +41,10 @@ const GameInstruction = () => {
           if (!response.ok) {
             throw new Error("Failed to fetch rating");
           }
-          console.log(response);
+
           const data = await response.json();
-          setResponseData(data); // Lưu kết quả vào state
+          console.log(data.data);
+          setResponseData(data.data); // Lưu kết quả vào state
         } catch (error) {
           console.error("Error fetching rating:", error);
         }
@@ -53,7 +53,6 @@ const GameInstruction = () => {
       fetchGameRating();
     }
   }, [currentGame]);
-  console.log(responseData);
   const breadcrumbItems = [
     { label: "HOME", href: "/", active: false },
     {
@@ -65,25 +64,28 @@ const GameInstruction = () => {
   ];
   return (
     <div className="h-fit max-w-[1020px] p-[24px] rounded-2xl bg-[#f8f7fa]">
-      <ScrollArea className="h-[1510px] w-full">
-        <Breadcrumb items={breadcrumbItems} />
-        <div className="flex items-center justify-between mb-[24px]">
-          <h1 className="text-3xl font-bold">{currentGame.name}</h1>
+      <Breadcrumb items={breadcrumbItems} />
+      <div className="flex items-center justify-between mb-[24px]">
+        <h1 className="text-2xl font-bold">{currentGame.name}</h1>
+        <div className="flex items-center justify-center">
           <ReactStars
-            value={5}
+            value={rate}
             onChange={handlRate}
             count={5}
             size={34}
             color2={"#ffd700"}
           />
+          <span className="block ml-[5px]">votes 4.2/5</span>
         </div>
+      </div>
+      <ScrollArea className="h-[1410px] w-full">
         {currentGame.descripTion?.map((descr: TDescription, index: number) => (
           <div key={index} className="mb-[24px]">
-            <h2 className="text-2xl font-bold mb-[16px]">{descr.title}</h2>
+            <h2 className="text-xxl font-bold mb-[16px]">{descr.title}</h2>
             {descr.descSub?.map((sub: TDescSub, subIndex: number) => (
               <div key={subIndex} className="mb-[16px]">
                 {sub.title2 && (
-                  <h3 className="text-xl font-semibold mb-[8px]">
+                  <h3 className="text-l font-semibold mb-[8px]">
                     {sub.title2}
                   </h3>
                 )}
