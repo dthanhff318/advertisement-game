@@ -13,16 +13,31 @@ export default function GameLayout({ children }: TProps) {
     <div className="w-full">
       <div className="flex flex-col md:flex-row items-center gap-4 max-h-[610px]">
         {children}
-        <div className="bg-red-300 w-full md:w-[220px] lg:w-[280px] xl:w-[330px] 2xl:w-[420px] h-[200px] sm:h-[250px] md:h-[610px] md:shrink-0">
-          Ads
-        </div>
-        <div className="hidden 2xl:flex flex-col gap-4 justify-start h-[200px] sm:h-[300px] md:h-[610px] ">
+        {/* <div className="w-full md:w-[220px] grid-cols-4 gap-4 lg:w-[280px] xl:w-[330px] 2xl:w-[420px] h-[200px] sm:h-[250px] md:h-[610px] md:shrink-0">
+          <div className="grid grid-cols-4 sm:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-3 gap-[10px]">
+            {ListGame.map((game: TGame, index: number) => (
+              <GameCard key={index} game={game} />
+            ))}
+          </div>
+        </div> */}
+        {/* <div className="hidden 2xl:flex flex-col grid-cols-4 gap-4 justify-start h-[200px] sm:h-[300px] md:h-[610px] ">
           {ListGame.map((game: TGame, index: number) => {
             if (index < 4) {
               return <GameCard key={index} game={game} />;
             }
             return null;
           })}
+        </div> */}
+        <div className="w-full hidden md:flex md:w-[220px] grid-cols-4 gap-4 lg:w-[280px] xl:w-[330px] 2xl:w-[420px] h-[200px] sm:h-[250px] md:h-[610px] md:shrink-0">
+          <div className="p-[10px] shrink-0 rounded-2xl">
+            <ScrollArea className="h-[560px]">
+              <div className="grid grid-cols-4 sm:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-3 gap-[10px]">
+                {ListGame.map((game: TGame, index: number) => (
+                  <GameCard key={index} game={game} />
+                ))}
+              </div>
+            </ScrollArea>
+          </div>
         </div>
       </div>
       <div className="w-full flex flex-col md:flex-row mt-[50px] gap-4">
@@ -30,9 +45,9 @@ export default function GameLayout({ children }: TProps) {
         <div className="shrink-0 w-full md:w-[220px] lg:w-[280px] xl:w-[330px] 2xl:w-[420px]">
           <div className="p-[10px] shrink-0 bg-white rounded-2xl">
             <h1 className="text-2xl ml-1 font-semibold mb-2">Hot Game</h1>
-            <ScrollArea className="h-[670px]">
-              <div className="grid grid-cols-4 sm:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-3 gap-[10px]">
-                {ListGame.slice(0, 12).map((game: TGame, index: number) => (
+            <ScrollArea className="h-[280px] md:max-h-[670px]">
+              <div className="grid grid-cols-4 sm:grid-cols-3 xl:grid-cols-2 2xl:grid-cols-3 gap-[10px]">
+                {ListGame.map((game: TGame, index: number) => (
                   <GameCard key={index} game={game} />
                 ))}
               </div>

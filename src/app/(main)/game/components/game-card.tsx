@@ -14,7 +14,7 @@ export default function GameCard({ game }: { game: TGame }) {
   return (
     <div
       onClick={() => handleGameClick(game)}
-      className="h-[160px] cursor-pointer relative group overflow-hidden transition-all rounded-md"
+      className="aspect-square cursor-pointer relative group overflow-hidden transition-all rounded-md"
     >
       <Image
         className="h-full w-full object-cover"

@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   title: "Game Stack",
   description: "Amazing free game to play",
   keywords: "free games, online games, play games",
+  icons: {
+    icon: "/images/block-blast.jpeg",
+  },
 };
 
 export default function RootLayout({
@@ -32,7 +35,6 @@ export default function RootLayout({
         <meta name="geo.position" content="37.7749;-122.4194" />
         <meta name="ICBM" content="37.7749, -122.4194" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/images/block-blast.jpeg" />
         {/* JSON-LD Schema */}
         <script
           type="application/ld+json"

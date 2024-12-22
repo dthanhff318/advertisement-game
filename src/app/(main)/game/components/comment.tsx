@@ -56,10 +56,13 @@ export function CommentGame() {
 
     if (formData.terms) {
       console.log("Form Data:", formData);
-      alert("Form submitted successfully!");
       handlComment(formData);
-    } else {
-      alert("You must agree to the terms and conditions to submit.");
+      setFormData({
+        name: "",
+        email: "",
+        comment: "",
+        terms: false,
+      });
     }
   };
 
@@ -132,8 +135,7 @@ export function CommentGame() {
               </div>
               <div className="flex flex-col space-y-1.5">
                 <Input
-                  id="email"
-                  name="email"
+                  type="email"
                   placeholder="Email"
                   value={formData.email}
                   onChange={handleEmailChange}
