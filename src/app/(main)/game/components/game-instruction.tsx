@@ -9,10 +9,13 @@ import { useEffect, useState } from "react";
 const GameInstruction = () => {
   const { currentGame } = useGame();
   const [rate, setRate] = useState(4.5);
-  const [responseData, setResponseData] = useState(null); // Trạng thái lưu kết quả từ API
+  const [responseData, setResponseData] = useState(null);
   const handlRate = async (rateG: any) => {
+    const isRate = JSON.parse(localStorage.getItem("rated") ?? "false");
+    if (isRate) return;
+    localStorage.setItem("rated", JSON.stringify(true));
     setRate(rateG);
-    const response = await fetch(`/api/rating`, {
+    await fetch(`/api/rating`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

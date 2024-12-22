@@ -16,8 +16,6 @@ export async function GET(request: Request) {
   const dataGame = await reactionModel.find({
     game: queryValue,
   });
-  console.log(dataGame);
-
   return NextResponse.json({
     data: dataGame,
   });
@@ -32,14 +30,21 @@ export async function POST(request: Request) {
     const findExist = await reactionModel.findOne({
       game,
     });
-    if (findExist) {
+    if (findExist && rest.email === findExist.email) {
       await reactionModel.findOneAndUpdate({
         game,
+        email: rest.email,
         ...rest,
       });
     } else {
       const newReaction = new reactionModel({ ...body, ipAddress });
       await newReaction.save();
+    }
+    const countRating = await reactionModel.countDocuments({
+      game,
+    });
+    if (countRating > 5) {
+      reactionModel.findOneAndDelete({}, { sort: { createAt: 1 } });
     }
     return NextResponse.json({ message: "OK" });
   } catch (error) {
