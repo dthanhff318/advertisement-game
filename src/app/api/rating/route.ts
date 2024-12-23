@@ -44,7 +44,7 @@ export async function POST(request: Request) {
       game,
     });
     if (countRating > 5) {
-      reactionModel.findOneAndDelete({}, { sort: { createAt: 1 } });
+      await reactionModel.findOneAndDelete({}, { sort: { createAt: 1 } });
     }
     return NextResponse.json({ message: "OK" });
   } catch (error) {

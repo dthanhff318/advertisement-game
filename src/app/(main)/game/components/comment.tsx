@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import * as React from "react";
 
@@ -51,12 +52,13 @@ export function CommentGame() {
       terms: e,
     }));
   };
-  const handleSubmit = (e: any) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
 
     if (formData.terms) {
       console.log("Form Data:", formData);
       handlComment(formData);
+      await fetchGameRating();
       setFormData({
         name: "",
         email: "",
@@ -65,30 +67,28 @@ export function CommentGame() {
       });
     }
   };
+  const fetchGameRating = async () => {
+    try {
+      const response = await fetch(`/api/rating?game=${currentGame.slug}`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
 
+      if (!response.ok) {
+        throw new Error("Failed to fetch rating");
+      }
+      const data = await response.json();
+      console.log(data.data);
+      setResponseData(data.data); // Lưu kết quả vào state
+    } catch (error) {
+      console.error("Error fetching rating:", error);
+    }
+  };
   useEffect(() => {
     // Nếu `currentGame` tồn tại, gọi API để lấy đánh giá
     if (currentGame?.name) {
-      const fetchGameRating = async () => {
-        try {
-          const response = await fetch(`/api/rating?game=${currentGame.slug}`, {
-            method: "GET",
-            headers: {
-              "Content-Type": "application/json",
-            },
-          });
-
-          if (!response.ok) {
-            throw new Error("Failed to fetch rating");
-          }
-          const data = await response.json();
-          console.log(data.data);
-          setResponseData(data.data); // Lưu kết quả vào state
-        } catch (error) {
-          console.error("Error fetching rating:", error);
-        }
-      };
-
       fetchGameRating();
     }
   }, [currentGame]);

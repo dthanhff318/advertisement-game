@@ -68,15 +68,16 @@ const GameInstruction = () => {
   return (
     <div className="h-fit max-w-[1020px] p-[24px] rounded-2xl bg-[#f8f7fa]">
       <Breadcrumb items={breadcrumbItems} />
-      <div className="flex items-center justify-between mb-[24px]">
-        <h1 className="text-2xl font-bold">{currentGame.name}</h1>
-        <div className="flex items-center justify-center">
+      <div className="flex flex-col sm:flex-row items-center justify-between mb-[24px]">
+        <h1 className="text-2xl sm:text-2xl font-bold">{currentGame.name}</h1>
+        <div className="flex flex-col sm:flex-row items-center justify-center ">
           <ReactStars
             value={rate}
             onChange={handlRate}
             count={5}
             size={34}
             color2={"#ffd700"}
+            className=" "
           />
           <span className="block ml-[5px]">votes 4.2/5</span>
         </div>
