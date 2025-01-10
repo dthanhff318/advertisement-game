@@ -9,8 +9,7 @@ import { useEffect, useState } from "react";
 const GameInstruction = () => {
   const { currentGame } = useGame();
   const [rate, setRate] = useState(4.5);
-  const [responseData, setResponseData] = useState(null);
-  const handlRate = async (rateG: any) => {
+  const handlRate = async (rateG: number) => {
     const isRate = JSON.parse(localStorage.getItem("rated") ?? "false");
     if (isRate) return;
     localStorage.setItem("rated", JSON.stringify(true));
@@ -25,8 +24,6 @@ const GameInstruction = () => {
         game: currentGame.slug,
       }),
     });
-
-    // console.log(data);
   };
 
   useEffect(() => {
@@ -44,10 +41,6 @@ const GameInstruction = () => {
           if (!response.ok) {
             throw new Error("Failed to fetch rating");
           }
-
-          const data = await response.json();
-          console.log(data.data);
-          setResponseData(data.data); // Lưu kết quả vào state
         } catch (error) {
           console.error("Error fetching rating:", error);
         }

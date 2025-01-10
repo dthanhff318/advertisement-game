@@ -11,7 +11,6 @@ import { useEffect, useRef, useState } from "react";
 
 export default function GameIframe() {
   const searchParams = useParams();
-  const [rating, setRating] = useState(0);
   const { currentGame, updateCurrentGame } = useGame();
   const [cinemaMode, setCinemaMode] = useState(false);
   const handleFullScreen = () => {

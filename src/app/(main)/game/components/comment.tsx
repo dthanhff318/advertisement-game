@@ -57,7 +57,7 @@ export function CommentGame() {
 
     if (formData.terms) {
       console.log("Form Data:", formData);
-      handlComment(formData);
+      await handlComment(formData);
       await fetchGameRating();
       setFormData({
         name: "",
@@ -93,7 +93,7 @@ export function CommentGame() {
     }
   }, [currentGame]);
   const handlComment = async (CommentGame: any) => {
-    const response = await fetch("/api/rating", {
+    await fetch("/api/rating", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -104,10 +104,7 @@ export function CommentGame() {
         game: currentGame.slug,
       }),
     });
-    // const data = await response.json();
-    // console.log(data);
   };
-  console.log(responseData);
   return (
     <div>
       <Card className="w-full">

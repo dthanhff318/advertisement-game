@@ -375,5 +375,132 @@ const descriptionGame = {
       ],
     },
   ],
+  WoodBlockTapAway: [
+    {
+      title: "Overview of Wood Block Tap Away",
+      descSub: [
+        {
+          title2: "",
+          chilren: [
+            "In Wood Block Tap Away, players will be tasked with freeing up wooden blocks piled up on the screen. You do this by touching and dragging the wooden blocks in the appropriate direction to remove them from the board. However, the special thing about the game is that the wooden blocks can only move in certain directions, requiring players to carefully calculate before each step.",
+          ],
+        },
+      ],
+    },
+    {
+      title: "How to Play Wood Block Tap Away",
+      descSub: [
+        {
+          title2: "",
+          chilren: [
+            "Observe the board: Learn the pattern of stacking the wooden blocks and the valid direction in which they can be moved.",
+            "Compute the moves: Tap on every wooden block to move it in a valid direction to unleash each block.",
+            "Solve the level: Get all the wood blocks on screen cleared and advance to the next level. It would get increasingly difficult since the higher the level, the more complicated it was to arrange wooden blocks, and require a higher way of strategy or logical thinking.",
+          ],
+        },
+      ],
+    },
+    {
+      title: "Conclusion",
+      descSub: [
+        {
+          title2: "",
+          chilren: [
+            "Wood Block Tap Away is such an exciting combination between entertainment and logical thinking. The attractive gameplay and impressive graphics, combined with creative levels, promise to satisfy you. Let's try Wood Block Tap Away to explore your thinking to win all challenges!",
+          ],
+        },
+      ],
+    },
+  ],
+  ElementalBlockade: [
+    {
+      title: "Overview",
+      descSub: [
+        {
+          title2: "",
+          chilren: [
+            "Elemental Blockade is a strategy defense game that requires logical thinking and resource management skills. Your aim is to build a robust barrier against waves of organic elemental attacks: fire, water, earth, and wind.",
+          ],
+        },
+      ],
+    },
+    {
+      title: "How to Play Elemental Blockade",
+      descSub: [
+        {
+          title2: "",
+          chilren: [
+            "Building Defense: Build defenses using resources according to the strengths of each element.",
+            "Resource Management: Gather and distribute resources shrewdly.",
+            "Develop strategy according to the nature of elements to optimize the defense system.",
+            "Protect players: Finish the level by fighting against all waves of attacks.",
+          ],
+        },
+      ],
+    },
+    {
+      title: "FAQs",
+      descSub: [
+        {
+          title2: "",
+          chilren: [
+            "Q. Is this game highly resource-intensive?",
+            "A.No, Elemental Blockade is designed lightweight and does not require a high computer configuration.",
+            "Q. How can I optimize the defense system?",
+            "A.Combine more elements in an area for better efficiency in the defense system.",
+            "Q. Can I play this on mobile?",
+            "A.Yes, it runs very smoothly on mobile.",
+          ],
+        },
+      ],
+    },
+  ],
+  ChocoBlocks: [
+    {
+      title: "Overview",
+      descSub: [
+        {
+          title2: "",
+          chilren: [
+            "Choco Blocks is a challenging puzzle game with a blend of strategy, speed, and sweetness. The puzzles will involve candies that players will need to solve by matching blocks of chocolate to reach certain goals. It is a game meant to test your problem-solving capabilities while ensuring visual delight.",
+          ],
+        },
+      ],
+    },
+    {
+      title: "Choco Blocks Gameplay and Strategy ",
+      descSub: [
+        {
+          title2: "",
+          chilren: [
+            "Match Chocolates: Swap adjacent blocks to create matches of three or more similar chocolates.",
+            "Strategic Moves: Reflect on each of your moves in a manner to ensure chain reactions that provide the maximum score.",
+            "Make use of power-ups wisely. The special tools such as chocolate bombs and rainbow chocolates clean whole areas of the board. It all comes down to the right time for their usage.",
+            "Level Objectives: Clear blocks of certain numbers, reach a specific score, and clear obstacles to win different levels.",
+          ],
+        },
+      ],
+    },
+    {
+      title: "Controls",
+      descSub: [
+        {
+          title2: "",
+          chilren: ["Click and swap the blocks with your mouse"],
+        },
+      ],
+    },
+    {
+      title: "Conclusion",
+      descSub: [
+        {
+          title2: "",
+          chilren: [
+            "Choco Blocks is a fun-addicting puzzle game in which colorful blocks of chocolate are matched by the player to clear the board and earn points. With various levels, unique challenges, and power-ups, Choco Blocks promises hours of entertainment.",
+          ],
+        },
+      ],
+    },
+  ],
 };
 export default descriptionGame;

@@ -78,7 +78,7 @@ const ListGame: TGame[] = [
     id: 6,
     name: "Block Champ",
     linkgame:
-      "https://playhop.com/dist-app/335526?header=no&utm_source=distrib&utm_medium=gameflare&clid=6950449",
+      "https://html5.gamedistribution.com/0d8acf7c95dc4c02b9d881f769a5c0b1/",
     descripTion: descriptionGame.BlockChamp,
     img: "/img-game/block-champ.png",
     slug: "block-champ",
@@ -88,7 +88,7 @@ const ListGame: TGame[] = [
     id: 7,
     name: "BLOCK MATCH 8x8",
     linkgame:
-      "https://html5.gamedistribution.com/ce5722d11d38481183a7c66963f762d4/",
+      "https://html5.gamedistribution.com/d0cdbaed8d5445b1b9a64b970c90ef2a/",
     descripTion: descriptionGame.BlockBlast,
     img: "/img-game/block-match-8x8.jpeg",
     slug: "block-match-8x8",
@@ -99,7 +99,7 @@ const ListGame: TGame[] = [
     name: "Wood Block Tap Away",
     linkgame:
       "https://html5.gamedistribution.com/991c85e777824b43a46422c9f2531764/?gd_sdk_referrer_url=https://block-blast.io/wood-block-tap-away",
-    descripTion: descriptionGame.BlockBlast,
+    descripTion: descriptionGame.WoodBlockTapAway,
     img: "/img-game/wood-block-tap-away.png",
     slug: "wood-block-tap-away",
     listTag: ["block games", "puzzle games"],
@@ -108,7 +108,7 @@ const ListGame: TGame[] = [
     id: 9,
     name: "Elemental Blockade",
     linkgame: "https://html-classic.itch.zone/html/11981061/index.html",
-    descripTion: descriptionGame.BlockBlast,
+    descripTion: descriptionGame.ElementalBlockade,
     img: "/img-game/Elemental-blockade.png",
     slug: "elemental-blockade",
     listTag: ["block games", "puzzle games"],
@@ -116,7 +116,7 @@ const ListGame: TGame[] = [
   {
     id: 10,
     name: "Choco Blocks",
-    descripTion: descriptionGame.BlockBlast,
+    descripTion: descriptionGame.ChocoBlocks,
     linkgame:
       "https://html5.gamedistribution.com/330c466258f941d39efc335aef7a2869/?gd_sdk_referrer_url=https://block-blast.io/choco-blocks",
     img: "/img-game/choco-blocks.png",

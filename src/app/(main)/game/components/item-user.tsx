@@ -1,5 +1,4 @@
 "use client";
-import { TGame } from "@/listgame/list-game";
 
 export default function ItemUser({ comment }: any) {
   return (
