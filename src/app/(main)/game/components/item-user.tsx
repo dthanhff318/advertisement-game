@@ -1,6 +1,14 @@
 "use client";
 
-export default function ItemUser({ comment }: any) {
+export default function ItemUser({
+  comment,
+}: {
+  comment: {
+    email: string;
+    updateAt: string;
+    comment: string;
+  };
+}) {
   return (
     <div className="w-full h-auto mb-[15px]">
       <div className="flex mb-[5px] h-[40px] items-center">
