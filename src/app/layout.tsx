@@ -47,7 +47,7 @@ export default function RootLayout({
                 "Block Blast is the ultimate puzzle game for fun and strategy lovers. Match blocks, clear rows, and challenge your mind in this exciting, free-to-play game online.",
               url: process.env.APP_URL,
               mainEntityOfPage: process.env.APP_URL,
-              image: "https://yourdomain.com/images/block-blast.jpeg",
+              image: "https://blockblastonline.co/images/block-blast.jpeg",
             }),
           }}
         />

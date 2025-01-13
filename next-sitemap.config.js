@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.APP_URL || "https://example.com",
+  siteUrl: process.env.APP_URL || "https://blockblastonline.co/",
   generateRobotsTxt: true, // (optional)
   sitemapSize: 5000,
   additionalPaths: async () => {

@@ -92,6 +92,7 @@ export default function GameIframe() {
               <iframe
                 className="w-full h-full pointer-events-auto"
                 allowFullScreen
+                pointer-events-auto
                 id="game-play-iframe"
               />
             </AspectRatio>

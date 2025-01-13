@@ -28,7 +28,7 @@ const GameDetail = ({ params }: { params: { name: string } }) => {
         />
         <meta
           property="og:image"
-          content="https://yourdomain.com/images/block-blast.jpeg"
+          content="https://blockblastonline.co/images/block-blast.jpeg"
         />
         {/* Schema Game - JSON-LD */}
         <script
@@ -38,12 +38,12 @@ const GameDetail = ({ params }: { params: { name: string } }) => {
               "@context": "https://schema.org",
               "@type": "Game",
               name: params.name,
-              url: `https://yourdomain.com/game/${params.name
+              url: `https://blockblastonline.co/game/${params.name
                 .toLowerCase()
                 .replace(" ", "-")}`,
-              image: "https://yourdomain.com/images/block-blast.jpeg",
+              image: "https://blockblastonline.co/images/block-blast.jpeg",
               description: `${params.name} is the ultimate puzzle game for fun and strategy lovers! Match blocks, clear rows, and challenge your mind in this exciting, free-to-play game online.`,
-              mainEntityOfPage: `https://yourdomain.com/game/${params.name
+              mainEntityOfPage: `https://blockblastonline.co/game/${params.name
                 .toLowerCase()
                 .replace(" ", "-")}`,
               genre: "Puzzle",
@@ -53,14 +53,14 @@ const GameDetail = ({ params }: { params: { name: string } }) => {
               },
               offers: {
                 "@type": "Offer",
-                url: `https://yourdomain.com/game/${params.name
+                url: `https://blockblastonline.co/game/${params.name
                   .toLowerCase()
                   .replace(" ", "-")}`,
                 priceCurrency: "USD",
                 price: "0",
                 priceValidUntil: "2024-12-31",
               },
-              sameAs: `https://yourdomain.com/game/${params.name
+              sameAs: `https://blockblastonline.co/game/${params.name
                 .toLowerCase()
                 .replace(" ", "-")}`,
             }),
@@ -92,8 +92,10 @@ export async function generateMetadata({
       description: `${
         findGame?.name ?? "Block Blast"
       } is the ultimate puzzle game for fun and strategy lovers!`,
-      url: `https://yourdomain.com/game/${findGame?.name ?? "Block Blast"}`,
-      image: `https://yourdomain.com/images/${
+      url: `https://blockblastonline.co/game/${
+        findGame?.name ?? "Block Blast"
+      }`,
+      image: `https://blockblastonline.co/images/${
         findGame?.name ?? "Block Blast"
       }.jpeg`,
     },
