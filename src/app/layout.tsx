@@ -10,7 +10,7 @@ const kanitFont = Kanit({
 });
 
 export const metadata: Metadata = {
-  title: "Game Stack",
+  title: "Block Blast",
   description: "Amazing free game to play",
   keywords: "free games, online games, play games",
   icons: {
@@ -29,7 +29,7 @@ export default function RootLayout({
         <meta name="robots" content="noodp,index,follow" />
         <meta
           name="description"
-          content="Block Blast is the ultimate puzzle game for fun and strategy lovers! Match blocks, clear rows, and challenge your mind in this exciting, free-to-play game online."
+          content="Block Blast is a classic puzzle game but with several twists. In the game, different blocks will appear on the screen, and accordingly, you are required to rotate them and place them correctly in such a manner that complete lines of blocks result from it."
         />
         <meta name="geo.region" content="US" />
         <meta name="geo.position" content="37.7749;-122.4194" />
@@ -44,7 +44,7 @@ export default function RootLayout({
               "@type": "WebPage",
               name: "Block Blast - Puzzle Game",
               description:
-                "Block Blast is the ultimate puzzle game for fun and strategy lovers. Match blocks, clear rows, and challenge your mind in this exciting, free-to-play game online.",
+                "Block Blast is a classic puzzle game but with several twists. In the game, different blocks will appear on the screen, and accordingly, you are required to rotate them and place them correctly in such a manner that complete lines of blocks result from it.",
               url: process.env.APP_URL,
               mainEntityOfPage: process.env.APP_URL,
               image: "https://blockblastonline.co/images/block-blast.jpeg",
